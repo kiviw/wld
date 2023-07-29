@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coin Exchange Calculator</title>
+    <!-- Add any meta tags or other SEO elements here -->
+
+    <!-- Add any CSS styling here -->
+    <style>
+        /* CSS styling for the page elements */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .calculator {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .payment-address {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .whatsapp-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coin Buyer</h1>
+        <p>We pay immediately - Custom coin exchange calculator where 1 coin is equal to 210 bob.</p>
+
+        <div class="calculator">
+            <label for="coinAmount">Enter the number of coins:</label>
+            <input type="number" id="coinAmount" min="0" step="1" onchange="calculateAmount()" />
+
+            <p id="result"></p>
+        </div>
+
+        <div class="payment-address">
+            <p>Payment Address: 0xbe5d9b4f0b61ed76bbfa821ea465e0c4179f0684</p>
+        </div>
+
+        <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=3278678078" target="_blank">Contact us on WhatsApp</a>
+    </div>
+
+    <!-- Add any JavaScript logic here -->
+    <script>
+        function calculateAmount() {
+            const coinValue = 210;
+            const coinAmount = parseFloat(document.getElementById('coinAmount').value);
+            const calculatedAmount = coinAmount * coinValue;
+            document.getElementById('result').innerText = `${coinAmount} coins = ${calculatedAmount} bob`;
+        }
+    </script>
+</body>
+</html>
